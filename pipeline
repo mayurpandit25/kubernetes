@@ -1,7 +1,4 @@
-pipeline {
-    agent any
-
-    stages {
+stages {
         stage('checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/mayurpandit25/kubernetes.git'
@@ -9,10 +6,10 @@ pipeline {
         }
         
         stage('build') {
-    steps {
-        script {
-            catchError(buildResult: 'UNSTABLE') {
-                sh 'kubectl apply -f .'
+            steps {
+                sh ''' 
+                kubectl apply -f .
+                '''
             }
         }
     }
