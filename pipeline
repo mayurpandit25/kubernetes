@@ -11,7 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 sh ''' 
-                kubectl apply -f pod.yaml
+                kubectl apply -f .
                 '''
             }
         }
