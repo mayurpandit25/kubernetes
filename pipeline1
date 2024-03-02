@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'slave-key', url: 'https://gitlab.com/panditmayur888/kubernetes.git'
+            }
+        }
+        
+        stage('build') {
+            steps {
+                sh 'kubectl apply -f Deployment.yml'
+            }
+        }
+    }
+}
