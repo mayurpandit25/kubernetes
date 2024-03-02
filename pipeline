@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                git 'https://github.com/Pritam-Khergade/student-ui.git'
+            }
+        }
+        
+        stage('build') {
+            steps {
+                sh 'kubectl apply -f .'
+            }
+        }
+    }
+}
