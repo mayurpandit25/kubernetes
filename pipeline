@@ -9,10 +9,10 @@ pipeline {
         }
         
         stage('build') {
-            steps {
-                sh ''' 
-                kubectl apply -f .
-                '''
+    steps {
+        script {
+            catchError(buildResult: 'UNSTABLE') {
+                sh 'kubectl apply -f .'
             }
         }
     }
