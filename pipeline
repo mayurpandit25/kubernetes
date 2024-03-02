@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git 'https://github.com/Pritam-Khergade/student-ui.git'
+                git branch: 'main', url: 'https://github.com/mayurpandit25/kubernetes.git'
             }
         }
         
