@@ -7,8 +7,8 @@ metadata:
     env: devops
 spec:
   containers:
-    - name: nginx
-      image: nginx 
-      ports: 
-        - name: http
-          containerPort: 80
+  - name: nginx
+    image: nginx 
+    ports: 
+    - name: http
+      containerPort: 80
